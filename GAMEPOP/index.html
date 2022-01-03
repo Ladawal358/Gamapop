@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POP loli</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+
+
+</head>
+<body>
+
+    <div class="pho">
+        <h2 id="point">0</h2>
+        <img id="popcat" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFQseFZ7OYw22tegoiSJ7MxJaWTtTmyJKiEl4I_SuG35fdnqgx-yie6PsbQdSZlGljkaY&usqp=CAU" width="474" height="544"  alt="">
+        <button id="btn">click</button>
+        
+    </div>
+ 
+
+    
+    
+</body>
+</html>
+<script>
+
+    //  DOM elements
+const popcat = document.querySelector("#popcat");
+const btn = document.querySelector("#btn");
+
+//  images  LOLI
+const openMouthImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFQseFZ7OYw22tegoiSJ7MxJaWTtTmyJKiEl4I_SuG35fdnqgx-yie6PsbQdSZlGljkaY&usqp=CAU";
+const closeMouthImg = "https://i.pinimg.com/474x/d8/81/65/d881650376b627524f408434cc2970a9.jpg";
+
+// sounds
+const openMouthSound = new Audio("./sound/sound-open.mp3");
+const closeMouthSound = new Audio("./sound/sound-close.mp3");
+
+// Event
+btn.addEventListener("mousedown", openMouth);
+btn.addEventListener("mouseup", closeMouth);
+
+// Event 
+btn.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    openMouth();
+})
+
+btn.addEventListener("touchend", function(e) {
+    e.preventDefault();
+    closeMouth();
+})
+
+function openMouth() {
+    popcat.src = openMouthImg;
+    openMouthSound.play();
+}
+
+function closeMouth() {
+    popcat.src = closeMouthImg;
+    closeMouthSound.play();
+}
+
+
+</script>
